@@ -18,12 +18,9 @@ This Libray makes creating fulfillment for Dialogflow v2 agents with <a href="">
     <li><a href="https://console.dialogflow.com/api-client/#/login">Login or Create a Dialogflow Account</a></li>
     <li>Create a Dialogflow agent or import samples</li>
     <li>Setup your Django or Flask API</a>
-    <li>Install this library from Pip using ```pip install dialogflow_fulfillment``` </li>
+    <li>Install this library from Pip using `pip install dialogflow_fulfillment` </li>
     <li>Go to <b>Fulfillment > Enable Webhook > Enter the url for your API > Enable webhook for all domains</b> </li>
 </ol>
-
-## How To Make Contributions
-Please read and follow the steps in the CONTRIBUTING.md.
 
 ## License
 See LICENSE.md.
