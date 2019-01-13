@@ -6,6 +6,7 @@ The <a href="">Dialogflow Fulfillment Library</a> allows you to connect natural 
 This Libray makes creating fulfillment for Dialogflow v2 agents with <a href="">Django</a> or <a href="">Flask</a> easy and simple.
 
 ## Supported Features
+
 <ol>
     <li>Simple Response</li>
     <li>System Intent</li>
@@ -14,13 +15,26 @@ This Libray makes creating fulfillment for Dialogflow v2 agents with <a href="">
 </ol>
 
 ## Quick Start
-<ol>
-    <li><a href="https://console.dialogflow.com/api-client/#/login">Login or Create a Dialogflow Account</a></li>
-    <li>Create a Dialogflow agent or import samples</li>
-    <li>Setup your Django or Flask API</a>
-    <li>Install this library from Pip using `pip install dialogflow_fulfillment` </li>
-    <li>Go to <b>Fulfillment > Enable Webhook > Enter the url for your API > Enable webhook for all domains</b> </li>
-</ol>
+
+1. <a href="https://console.dialogflow.com/api-client/#/login">Login or Create a Dialogflow Account</a>
+2. Create a Dialogflow agent or import samples
+3. Setup your Django or Flask API</a>
+4. Install this library from Pip using `pip install dialogflow_fulfillment`
+5. Go to <b>Fulfillment > Enable Webhook > Enter the url for your API > Enable webhook for all domains</b> 
+
+## Examples
+
+```
+from dialogflow_fulfillment import DialogflowResponse
+from dialogflow_fulfillment import SimpleResponse, Suggestions, SystemIntent
+
+dialogflow_response = DialogflowResponse("This is a text response")
+dialogflow_response.add(SimpleResponse("This is a simple text response","This is a simple text response"))
+dialogflow_response.add(Suggestions(["Help","About","Sync"]))
+dialogflow_response.add(SystemIntent("actions.intent.SIGN_IN"))
+
+print(dialogflow_response)
+```
 
 ## License
 See LICENSE.md.
