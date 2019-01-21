@@ -2,3 +2,4 @@
 *.pyc
 *.json
 test.py
+Samples/flask_sample/__pycache__/
