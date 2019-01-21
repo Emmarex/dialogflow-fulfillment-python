@@ -1,6 +1,6 @@
 from collections import OrderedDict
 import json
-from response import SimpleResponse, Suggestions, SystemIntent
+from dialogflow_fulfillment.response import *
 
 class DialogflowResponse:
 
@@ -25,6 +25,23 @@ class DialogflowResponse:
             self.rich_response["suggestions"] = dialog_response.response
         elif isinstance(dialog_response, SystemIntent):
             self.rich_response["systemIntent"] = dialog_response.response
+        elif isinstance(dialog_response, LinkOutSuggestion):
+            self.rich_response["linkOutSuggestion"] = dialog_response.response
+        elif isinstance(dialog_response, AskForSignin):
+            self.google_payload["systemIntent"] = dialog_response.response
+            self.google_payload["expectUserResponse"] = self.expect_user_response
+            fulfillment_message = OrderedDict()
+            fulfillment_message["displayText"] = "PLACEHOLDER_FOR_SIGN_IN"
+            fulfillment_message["textToSpeech"] = "PLACEHOLDER_FOR_SIGN_IN"
+            self.dialogflow_response["fulfillmentText"] = fulfillment_message
+        elif isinstance(dialog_response, AskPermission):
+            self.google_payload["systemIntent"] = dialog_response.response
+            self.google_payload["expectUserResponse"] = self.expect_user_response
+            fulfillment_message = OrderedDict()
+            fulfillment_message["displayText"] = "PLACEHOLDER_FOR_PERMISSION"
+            fulfillment_message["textToSpeech"] = "PLACEHOLDER_FOR_PERMISSION"
+            self.dialogflow_response["fulfillmentText"] = fulfillment_message
+
         
         self.google_payload["richResponse"] = self.rich_response
         self.google_payload["expectUserResponse"] = self.expect_user_response

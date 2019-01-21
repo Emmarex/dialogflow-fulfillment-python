@@ -1,5 +1,5 @@
 name = "dialogflow_fulfillment"
 
-from dialogflow_request import DialogflowRequest
-from dialogflow_response import DialogflowResponse
-from response import SimpleResponse, Suggestions, SystemIntent
+from dialogflow_fulfillment.dialogflow_request import DialogflowRequest
+from dialogflow_fulfillment.dialogflow_response import DialogflowResponse
+from dialogflow_fulfillment.response import *
