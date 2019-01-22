@@ -2,4 +2,9 @@
 *.pyc
 *.json
 test.py
-Samples/flask_sample/__pycache__/
+test/flask_sample/__pycache__/
+dialogflow_fulfillment/__pycache__/
+test/
+build/
+dist/
+dialogflow_fulfillment.egg-info/

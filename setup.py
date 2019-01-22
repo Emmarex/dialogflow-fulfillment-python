@@ -16,6 +16,7 @@ setuptools.setup(
     classifiers=[ 
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: Apache Software License",
+        "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
         "Framework :: Django",
         "Framework :: Flask"
