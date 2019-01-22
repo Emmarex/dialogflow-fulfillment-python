@@ -1,5 +1,6 @@
 # Dialogflow Fulfillment Python
 
+[![PyPI version](https://badge.fury.io/py/pydialogflow-fulfillment.svg)](https://badge.fury.io/py/pydialogflow-fulfillment)
 
 The <a href="https://dialogflow.com/docs/fulfillment" target="_blank">Dialogflow Fulfillment Library</a> allows you to connect natural language understanding and processing to your own systems, APIs, and databases. Using Fulfillment, you can surface commands and information from your services to your users through a natural conversational interface.
 
