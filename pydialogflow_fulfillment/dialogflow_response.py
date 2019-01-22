@@ -18,6 +18,11 @@ class DialogflowResponse:
         self.dialogflow_response["payload"] = self.response_payload
         return json.dumps(self.dialogflow_response)
 
+    def get_final_response(self):
+        self.response_payload["google"] = self.google_payload
+        self.dialogflow_response["payload"] = self.response_payload
+        return json.dumps(self.dialogflow_response)
+
     def add(self, dialog_response):
         if isinstance(dialog_response, SimpleResponse):
             self.rich_response["items"] = dialog_response.response

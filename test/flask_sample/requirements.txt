@@ -1,0 +1,2 @@
+Flask==1.0.2
+pydialogflow-fulfillment==0.0.1
