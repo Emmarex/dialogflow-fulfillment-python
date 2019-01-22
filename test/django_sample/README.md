@@ -5,4 +5,4 @@
 2. Download and install Python >= 3.0 - [https://www.python.org/]
 3. Navigate to this directory in your terminal
 4. **Type:** ```pip install -r requirements.txt```
-5. **Type:** ```python manage.py runserver``
+5. **Type:** ```python manage.py runserver```
