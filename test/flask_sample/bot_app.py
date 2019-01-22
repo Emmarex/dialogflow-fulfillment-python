@@ -1,8 +1,6 @@
 from flask import Flask
 from flask import request, abort
-from pydialogflow_fulfillment import DialogflowResponse
-from pydialogflow_fulfillment import DialogflowRequest
-from pydialogflow_fulfillment import SimpleResponse, Suggestions
+from pydialogflow_fulfillment import DialogflowResponse, DialogflowRequest, SimpleResponse, Suggestions
 
 app = Flask(__name__)
 
