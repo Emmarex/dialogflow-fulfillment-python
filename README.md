@@ -21,7 +21,7 @@ This Library makes creating fulfillment for Dialogflow v2 agents with <a href="h
 1. <a href="https://console.dialogflow.com/api-client/#/login" target="_blank">Login or Create a Dialogflow Account</a>
 2. Create a Dialogflow agent or import samples
 3. Setup your Django or Flask API</a>
-4. Install this library from Pip using `pip install dialogflow-fulfillment`
+4. Install this library from Pip using `pip install pydialogflow-fulfillment`
 5. Go to <b>Fulfillment > Enable Webhook > Enter the url for your API > Enable webhook for all domains</b> 
 
 ## Examples
@@ -29,7 +29,7 @@ This Library makes creating fulfillment for Dialogflow v2 agents with <a href="h
 ### Dialogflow Request
 
 ```
-from dialogflow_fulfillment import DialogflowRequest
+from pydialogflow_fulfillment import DialogflowRequest
 
 dialog_fulfillment = DialogflowRequest(request.body)
 
@@ -47,8 +47,8 @@ print(dialog_fulfillment.get_paramters()) # all parameters
 ### Dialogflow Response
 
 ```
-from dialogflow_fulfillment import DialogflowResponse
-from dialogflow_fulfillment import SimpleResponse, Suggestions, SystemIntent
+from pydialogflow_fulfillment import DialogflowResponse
+from pydialogflow_fulfillment import SimpleResponse, Suggestions, SystemIntent
 
 dialogflow_response = DialogflowResponse("This is a text response")
 dialogflow_response.add(SimpleResponse("This is a simple text response","This is a simple text response"))

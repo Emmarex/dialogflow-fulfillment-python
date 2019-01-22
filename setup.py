@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name='dialogflow_fulfillment',  
+    name='pydialogflow_fulfillment',  
     version='0.0.1',
     author="Tairu Oluwafemi Emmanuel",
     author_email="developer.emmarex@gmail.com",

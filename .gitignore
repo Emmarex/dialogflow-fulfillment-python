@@ -3,8 +3,8 @@
 *.json
 test.py
 test/flask_sample/__pycache__/
-dialogflow_fulfillment/__pycache__/
+pydialogflow_fulfillment/__pycache__/
 test/
 build/
 dist/
-dialogflow_fulfillment.egg-info/
+pydialogflow_fulfillment.egg-info/

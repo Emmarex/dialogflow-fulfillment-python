@@ -1,6 +1,6 @@
 from collections import OrderedDict
 import json
-from dialogflow_fulfillment.response import *
+from pydialogflow_fulfillment.response import *
 
 class DialogflowResponse:
 
