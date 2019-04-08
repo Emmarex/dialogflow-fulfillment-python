@@ -1,2 +1,8 @@
-site_name: dialogflow-fulfilment-python
+site_name: pydialogflow-fulfillment
+repo_url: https://github.com/Emmarex/dialogflow-fulfillment-python
 theme: readthedocs
+nav: 
+  - Getting Started: "getting_started.md"
+  - Dialogflow Request: "dialogflow_request.md"
+  - Dialogflow Response: "dialogflow_response.md"
+  - Response: "response.md"
