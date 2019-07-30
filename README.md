@@ -2,7 +2,10 @@
 
 [![Made in Nigeria](https://img.shields.io/badge/made%20in-nigeria-008751.svg?style=flat-square)](https://github.com/acekyd/made-in-nigeria)
 [![PyPI version](https://badge.fury.io/py/pydialogflow-fulfillment.svg)](https://badge.fury.io/py/pydialogflow-fulfillment)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/pydialogflow-fulfillment.svg)
 [![Documentation Status](https://readthedocs.org/projects/dialogflow-fulfillment-python/badge/?version=latest)](https://dialogflow-fulfillment-python.readthedocs.io/en/latest/?badge=latest)
+![GitHub issues](https://img.shields.io/github/issues/emmarex/dialogflow-fulfillment-python.svg)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/pydialogflow-fulfillment.svg)
 
 The <a href="https://dialogflow.com/docs/fulfillment" target="_blank">Dialogflow Fulfillment Library</a> allows you to connect natural language understanding and processing to your own systems, APIs, and databases. Using Fulfillment, you can surface commands and information from your services to your users through a natural conversational interface.
 

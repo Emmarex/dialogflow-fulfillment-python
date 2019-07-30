@@ -6,7 +6,6 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def index_page():
     if request.method == 'POST':
-        print('post')
         dialogflow_request = DialogflowRequest(request.data)
         if dialogflow_request.get_intent_displayName() == "welcome_intent":
             dialogflow_response = DialogflowResponse("Welcome to my test dialogflow webhook")
@@ -20,5 +19,4 @@ def index_page():
             print(dialogflow_response.get_final_response())
         return response
     else:
-        print('404')
         abort(404)
