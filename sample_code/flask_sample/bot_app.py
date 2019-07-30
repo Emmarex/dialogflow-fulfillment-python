@@ -1,4 +1,4 @@
-from flask import Flask, request, abort, jsonify
+from flask import Flask, request, abort
 from pydialogflow_fulfillment import DialogflowResponse, DialogflowRequest, SimpleResponse, Suggestions
 
 app = Flask(__name__)
@@ -10,13 +10,12 @@ def index_page():
         if dialogflow_request.get_intent_displayName() == "welcome_intent":
             dialogflow_response = DialogflowResponse("Welcome to my test dialogflow webhook")
             dialogflow_response.add(SimpleResponse("Welcome to my test dialogflow webhook","Welcome to my test dialogflow webhook"))
-            response = jsonify(dialogflow_response.get_final_response())
+            response = app.response_class(response=dialogflow_response.get_final_response(),mimetype='application/json')
         else:
             dialogflow_response = DialogflowResponse()
             dialogflow_response.add(SimpleResponse("Welcome to my test dialogflow webhook","Welcome to my test dialogflow webhook"))
             dialogflow_response.add(Suggestions(["About","Sync","More info"]))
-            response = jsonify(dialogflow_response.get_final_response())
-            print(dialogflow_response.get_final_response())
+            response = app.response_class(response=dialogflow_response.get_final_response(),mimetype='application/json')
         return response
     else:
         abort(404)
