@@ -21,11 +21,11 @@ The [Dialogflow Fulfillment Library](https://dialogflow.com/docs/fulfillment) al
 
 ### Contributing
 
-To contribute to django-storages [create a fork](https://github.com/Emmarex/dialogflow-fulfillment-python) on GitHub. Clone your fork, make some changes, and submit a pull request.
+To contribute to pydialogflow-fulfillment [create a fork](https://github.com/Emmarex/dialogflow-fulfillment-python) on GitHub. Clone your fork, make some changes, and submit a pull request.
 
 ### Issues
 
-Use the GitHub [issue tracker](https://github.com/Emmarex/dialogflow-fulfillment-python/issues) for django-storages to submit bugs, issues, and feature requests.
+Use the GitHub [issue tracker](https://github.com/Emmarex/dialogflow-fulfillment-python/issues) for pydialogflow-fulfillment to submit bugs, issues, and feature requests.
 
 ### License
 

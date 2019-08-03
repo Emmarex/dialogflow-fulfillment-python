@@ -115,6 +115,46 @@ class OutputContexts:
         self.response["lifespanCount"] = str(context_life_span)
         self.response["parameters"] = context_parameters
 
+class Table:
+    """
+    Table response adds tabular data in your response \n
+
+    Params: \n
+    rows: list of table cells (TableCell)\n
+    columns: list of Table Column Headers \n
+    Read more : https://developers.google.com/actions/assistant/responses#table_cards
+    """
+    def __init__(self, rows, columns, add_dividers=True):
+        self.response = OrderedDict()
+        self.table_rows = []
+        self.table_column = []
+        for column in columns:
+            column_dict = dict()
+            column_dict['header'] = column
+            self.table_column.append(column_dict)
+        for row in rows:
+            if isinstance(row, TableCell):
+                self.table_rows.append(row.single_cell)
+        self.response['columnProperties'] = self.table_column
+        self.response['rows'] = self.table_rows
+        
+class TableCell:
+    """
+    Table Cell add individual cells to a table row \n
+
+    cell_text: A list of string to be display in each table cell \n
+    add_dividers (Optional): Specify if dividers should be added to the table or not. Defaul value if True \n
+    """
+    def __init__(self,cell_text =[], add_dividers=True):
+        self.single_cell = OrderedDict()
+        table_cell = []
+        for text in cell_text:
+            cell = dict()
+            cell['text'] = text
+            table_cell.append(cell)
+        self.single_cell['cells'] = table_cell
+        self.single_cell['dividerAfter'] = add_dividers
+
 class Permissions:
 
     DEVICE_PRECISE_LOCATION = "DEVICE_PRECISE_LOCATION" # Ask for user"s precise location, lat/lng and formatted address

@@ -66,6 +66,8 @@ class DialogflowResponse:
             self.google_payload["expectUserResponse"] = self.expect_user_response
         elif isinstance(dialog_response, OutputContexts):
             self.output_contexts.append(dialog_response.response)
+        elif isinstance(dialog_response, Table):
+            self.rich_response['tableCard'] = dialog_response.response
         
         self.google_payload["richResponse"] = self.rich_response
         self.google_payload["expectUserResponse"] = self.expect_user_response

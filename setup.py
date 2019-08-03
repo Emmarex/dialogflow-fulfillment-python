@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name='pydialogflow_fulfillment',  
-    version='0.0.4',
+    version='0.0.5',
     author="Tairu Oluwafemi Emmanuel",
     author_email="developer.emmarex@gmail.com",
     description="This Library makes creating fulfillment for Dialogflow v2 agents with Django or Flask easy and simple",

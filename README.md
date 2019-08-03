@@ -25,6 +25,7 @@ This Library makes creating fulfillment for Dialogflow v2 agents with <a href="h
     <li>DateTime</li>
     <li>DeliveryAddress</li>
     <li>OuputContext</li>
+    <li>Table</li>
 </ol>
 
 ## Quick Start
