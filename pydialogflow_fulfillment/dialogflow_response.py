@@ -24,6 +24,7 @@ class DialogflowResponse:
         self.response_payload["google"] = self.google_payload
         self.dialogflow_response["outputContexts"] = self.output_contexts
         self.dialogflow_response["payload"] = self.response_payload
+        print(self.dialogflow_response)
         return json.dumps(self.dialogflow_response)
 
     def add(self, dialog_response):
@@ -67,7 +68,7 @@ class DialogflowResponse:
         elif isinstance(dialog_response, OutputContexts):
             self.output_contexts.append(dialog_response.response)
         elif isinstance(dialog_response, Table):
-            self.rich_response['tableCard'] = dialog_response.response
+            self.rich_response['items'].append(dialog_response.response)
         
         self.google_payload["richResponse"] = self.rich_response
         self.google_payload["expectUserResponse"] = self.expect_user_response

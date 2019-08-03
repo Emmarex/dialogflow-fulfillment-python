@@ -126,6 +126,7 @@ class Table:
     """
     def __init__(self, rows, columns, add_dividers=True):
         self.response = OrderedDict()
+        self.table_response = OrderedDict()
         self.table_rows = []
         self.table_column = []
         for column in columns:
@@ -135,8 +136,9 @@ class Table:
         for row in rows:
             if isinstance(row, TableCell):
                 self.table_rows.append(row.single_cell)
-        self.response['columnProperties'] = self.table_column
-        self.response['rows'] = self.table_rows
+        self.table_response['columnProperties'] = self.table_column
+        self.table_response['rows'] = self.table_rows
+        self.response['tableCard'] = self.table_response
         
 class TableCell:
     """
