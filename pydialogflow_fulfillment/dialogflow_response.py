@@ -24,7 +24,6 @@ class DialogflowResponse:
         self.response_payload["google"] = self.google_payload
         self.dialogflow_response["outputContexts"] = self.output_contexts
         self.dialogflow_response["payload"] = self.response_payload
-        print(self.dialogflow_response)
         return json.dumps(self.dialogflow_response)
 
     def add(self, dialog_response):
