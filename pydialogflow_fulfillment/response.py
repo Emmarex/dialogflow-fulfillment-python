@@ -38,10 +38,12 @@ class LinkOutSuggestion:
 
 class AskForSignin:
 
-    def __init__(self):
+    def __init__(self, optContext=""):
         self.response = OrderedDict()
         self.response["intent"] = "actions.intent.SIGN_IN"
-        self.response["inputValueData"] = dict()
+        self.response["data"] = dict()
+        self.response["data"]['@type'] = "type.googleapis.com/google.actions.v2.SignInValueSpec"
+        self.response['data']['optContext'] = optContext
 
 class AskPermission:
 
@@ -156,6 +158,13 @@ class TableCell:
             table_cell.append(cell)
         self.single_cell['cells'] = table_cell
         self.single_cell['dividerAfter'] = add_dividers
+
+class UserStorage:
+
+    def __init__(self, user_data=dict()):
+        self.user_data_dict = OrderedDict()
+        self.user_data_dict['data'] = user_data
+        self.response = json.dumps(self.user_data_dict)
 
 class Permissions:
 

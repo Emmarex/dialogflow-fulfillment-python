@@ -36,13 +36,15 @@ class DialogflowResponse:
         elif isinstance(dialog_response, LinkOutSuggestion):
             self.rich_response["linkOutSuggestion"] = dialog_response.response
         elif isinstance(dialog_response, AskForSignin):
+            self.add(SimpleResponse("PLACEHOLDER","PLACEHOLDER"))
             self.google_payload["systemIntent"] = dialog_response.response
             self.google_payload["expectUserResponse"] = self.expect_user_response
             fulfillment_message = OrderedDict()
-            fulfillment_message["displayText"] = "PLACEHOLDER_FOR_SIGN_IN"
-            fulfillment_message["textToSpeech"] = "PLACEHOLDER_FOR_SIGN_IN"
+            fulfillment_message["displayText"] = "PLACEHOLDER"
+            fulfillment_message["textToSpeech"] = "PLACEHOLDER"
             self.dialogflow_response["fulfillmentText"] = fulfillment_message
         elif isinstance(dialog_response, AskPermission):
+            self.add(SimpleResponse("PLACEHOLDER","PLACEHOLDER"))
             self.google_payload["systemIntent"] = dialog_response.response
             self.google_payload["expectUserResponse"] = self.expect_user_response
             fulfillment_message = OrderedDict()
@@ -50,6 +52,7 @@ class DialogflowResponse:
             fulfillment_message["textToSpeech"] = "PLACEHOLDER_FOR_PERMISSION"
             self.dialogflow_response["fulfillmentText"] = fulfillment_message
         elif isinstance(dialog_response, Confirmation):
+            self.add(SimpleResponse("PLACEHOLDER","PLACEHOLDER"))
             self.google_payload["systemIntent"] = dialog_response.response
             self.google_payload["expectUserResponse"] = self.expect_user_response
         elif isinstance(dialog_response, RegisterUpdate):
@@ -68,6 +71,8 @@ class DialogflowResponse:
             self.output_contexts.append(dialog_response.response)
         elif isinstance(dialog_response, Table):
             self.rich_response['items'].append(dialog_response.response)
+        elif isinstance(dialog_response, UserStorage):
+            self.google_payload['userStorage'] = str(dialog_response.response)
         
         self.google_payload["richResponse"] = self.rich_response
         self.google_payload["expectUserResponse"] = self.expect_user_response

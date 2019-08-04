@@ -36,6 +36,10 @@ This Library makes creating fulfillment for Dialogflow v2 agents with <a href="h
 4. Install this library from Pip using `pip install pydialogflow-fulfillment`
 5. Go to <b>Fulfillment > Enable Webhook > Enter the url for your API > Enable webhook for all domains</b> 
 
+## Upgrade 
+
+`pip install --upgrade pydialogflow-fulfillment`
+
 ## Usage
 View <a href="https://dialogflow-fulfillment-python.readthedocs.io/en/latest/" target="_blank">usage documentation</a> on Read the Docs.
 

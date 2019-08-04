@@ -38,3 +38,6 @@ class DialogflowRequest:
             if context["name"].split('/')[-1] == context_name:
                 return context
         return dict()
+
+    def get_user_token(self):
+        return self.request_data['originalDetectIntentRequest']['payload']['user']['idToken']
