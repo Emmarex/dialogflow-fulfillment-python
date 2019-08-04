@@ -28,7 +28,10 @@ class DialogflowResponse:
 
     def add(self, dialog_response):
         if isinstance(dialog_response, SimpleResponse):
-            self.rich_response["items"] = dialog_response.response
+            if 'items' in self.rich_response.keys():
+                self.rich_response['items'] += dialog_response.response
+            else:
+                self.rich_response["items"] = dialog_response.response
         elif isinstance(dialog_response, Suggestions):
             self.rich_response["suggestions"] = dialog_response.response
         elif isinstance(dialog_response, SystemIntent):
