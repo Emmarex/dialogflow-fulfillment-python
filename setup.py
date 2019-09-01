@@ -12,6 +12,8 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/Emmarex/dialogflow-fulfillment-python",
+    download_url="https://github.com/Emmarex/dialogflow-fulfillment-python/archive/0.0.9.tar.gz",
+    keywords= ['Dialogflow', 'Dialogflow fulfillment', 'Dialogflow fulfillment v2', 'pydialogflow_fulfillment'],
     packages=setuptools.find_packages(),
     classifiers=[ 
         "Programming Language :: Python :: 3",
