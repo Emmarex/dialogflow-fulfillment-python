@@ -45,7 +45,7 @@ dialog_fulfillment = DialogflowRequest(request.body) # for Django
 
 # dialog_fulfillment = DialogflowRequest(request.data) for Flask
 
-print(dialog_fulfillment.get_paramter("param"))
+print(dialog_fulfillment.get_parameter("param"))
 ```
 
 ### Get Request Parameters
@@ -57,7 +57,7 @@ dialog_fulfillment = DialogflowRequest(request.body) # for Django
 
 # dialog_fulfillment = DialogflowRequest(request.data) for Flask
 
-print(dialog_fulfillment.get_paramters())
+print(dialog_fulfillment.get_parameters())
 ```
 
 ### Get Session
