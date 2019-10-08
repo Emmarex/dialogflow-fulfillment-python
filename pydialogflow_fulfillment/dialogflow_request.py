@@ -12,7 +12,10 @@ class DialogflowRequest:
         return self.request_data["session"]
 
     def get_session_id(self):
-        return self.request_data["session"].split('/')[1]
+        return self.request_data["session"].split('/')[-1]
+
+    def get_action(self):
+        return self.request_data["queryResult"]["action"]
 
     def get_intent_name(self):
         return self.request_data["queryResult"]["intent"]["name"]
@@ -20,14 +23,14 @@ class DialogflowRequest:
     def get_intent_displayName(self):
         return self.request_data["queryResult"]["intent"]["displayName"]
 
-    def get_paramters(self):
+    def get_parameters(self):
         return self.request_data["queryResult"]["parameters"]
 
-    def get_paramter(self,param_key):
+    def get_parameter(self,param_key):
         return self.request_data["queryResult"]["parameters"][param_key]
 
     def get_project_id(self):
-        return self.request_data["queryResult"]["intent"]["name"].split('/')[1]
+        return self.request_data["session"].split('/')[1]
     
     def get_ouputcontext_list(self):
         return self.request_data["queryResult"]["outputContexts"]
