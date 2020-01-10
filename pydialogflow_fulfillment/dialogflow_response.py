@@ -1,6 +1,7 @@
 from collections import OrderedDict
 import json
 from pydialogflow_fulfillment.response import *
+from pydialogflow_fulfillment.telegram_response import *
 
 class DialogflowResponse:
 
@@ -9,6 +10,7 @@ class DialogflowResponse:
         self.response_payload = OrderedDict()
         self.rich_response = OrderedDict()
         self.google_payload = OrderedDict()
+        self.fulfillment_messages = []
         self.expect_user_response = True
         self.output_contexts = []
         self.dialogflow_response["fulfillmentText"] = fulfillment_message
@@ -16,12 +18,14 @@ class DialogflowResponse:
 
     def __str__(self):
         self.response_payload["google"] = self.google_payload
+        self.dialogflow_response["fulfillmentText"] = self.fulfillment_messages
         self.dialogflow_response["outputContexts"] = self.output_contexts
         self.dialogflow_response["payload"] = self.response_payload
         return json.dumps(self.dialogflow_response)
 
     def get_final_response(self):
         self.response_payload["google"] = self.google_payload
+        self.dialogflow_response["fulfillmentText"] = self.fulfillment_messages
         self.dialogflow_response["outputContexts"] = self.output_contexts
         self.dialogflow_response["payload"] = self.response_payload
         return json.dumps(self.dialogflow_response)
@@ -76,6 +80,9 @@ class DialogflowResponse:
             self.rich_response['items'].append(dialog_response.response)
         elif isinstance(dialog_response, UserStorage):
             self.google_payload['userStorage'] = str(dialog_response.response)
+        # telegram responses
+        elif isinstance(dialog_response, TelegramSimpleResponse):
+            self.fulfillment_messages.append(dialog_response.response)
         
         self.google_payload["richResponse"] = self.rich_response
         self.google_payload["expectUserResponse"] = self.expect_user_response
