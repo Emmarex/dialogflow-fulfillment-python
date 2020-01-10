@@ -44,3 +44,15 @@ class DialogflowRequest:
 
     def get_user_token(self):
         return self.request_data['originalDetectIntentRequest']['payload']['user']['idToken']
+
+    def get_chat_source(self):
+        """
+        Get the platform from which the user is interacting from
+        """
+        return self.request_data['originalDetectIntentRequest']['source']
+
+    def get_chat_platform_payload(self):
+        """
+        Get the data been sent from the chat platform
+        """
+        return self.request_data['originalDetectIntentRequest']['payload']
