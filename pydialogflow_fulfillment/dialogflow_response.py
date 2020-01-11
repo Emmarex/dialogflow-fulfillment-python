@@ -34,6 +34,9 @@ class DialogflowResponse:
         return json.dumps(self.dialogflow_response)
 
     def add(self, dialog_response):
+        """
+        Add a response to a dialogflow response
+        """
         if isinstance(dialog_response, SimpleResponse):
             if 'items' in self.rich_response.keys():
                 self.rich_response['items'] += dialog_response.response

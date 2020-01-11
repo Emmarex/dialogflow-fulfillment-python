@@ -13,6 +13,7 @@ This Library makes creating fulfillment for Dialogflow v2 agents with <a href="h
 
 ## Supported Features
 
+### Google Assistant
 <ol>
     <li>Confirmation</li>
     <li>Simple Response</li>
@@ -26,6 +27,13 @@ This Library makes creating fulfillment for Dialogflow v2 agents with <a href="h
     <li>DeliveryAddress</li>
     <li>OuputContext</li>
     <li>Table</li>
+</ol>
+
+### Telegram
+<ol>
+    <li>Simple Telegram Response</li>
+    <li>Telegram Message Response with support for HTML and Markdown</li>
+    <li>Telegram Keyboard Button Response</li>
 </ol>
 
 ## Quick Start
