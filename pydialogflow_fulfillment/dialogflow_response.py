@@ -14,18 +14,19 @@ class DialogflowResponse:
         self.expect_user_response = True
         self.output_contexts = []
         self.dialogflow_response["fulfillmentText"] = fulfillment_message
+        self.dialogflow_response["fulfillmentMessages"] = self.fulfillment_messages
         self.dialogflow_response["source"] = webhook_source
 
     def __str__(self):
         self.response_payload["google"] = self.google_payload
-        self.dialogflow_response["fulfillmentText"] = self.fulfillment_messages
+        self.dialogflow_response["fulfillmentMessages"] = self.fulfillment_messages
         self.dialogflow_response["outputContexts"] = self.output_contexts
         self.dialogflow_response["payload"] = self.response_payload
         return json.dumps(self.dialogflow_response)
 
     def get_final_response(self):
         self.response_payload["google"] = self.google_payload
-        self.dialogflow_response["fulfillmentText"] = self.fulfillment_messages
+        self.dialogflow_response["fulfillmentMessages"] = self.fulfillment_messages
         self.dialogflow_response["outputContexts"] = self.output_contexts
         self.dialogflow_response["payload"] = self.response_payload
         return json.dumps(self.dialogflow_response)
