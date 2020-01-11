@@ -32,12 +32,17 @@ class TelegramMessageResponse:
     """
     def __init__(self, message, parse_mode="", reply_message_id=None, disable_notification=False, disable_web_page_preview=False):
         self.response = OrderedDict()
-        self.response["text"] = message
-        self.response["parse_mode"] = parse_mode
-        self.response["disable_notification"] = disable_notification
-        self.response["disable_web_page_preview"] = disable_web_page_preview
+        telegram_response = dict()
+        simple_reponse = OrderedDict()
+        simple_reponse["text"] = message
+        simple_reponse["parse_mode"] = parse_mode
+        simple_reponse["disable_notification"] = disable_notification
+        simple_reponse["disable_web_page_preview"] = disable_web_page_preview
         if reply_message_id is not None:
-            self.response["reply_to_message_id"] = reply_message_id
+            simple_reponse["reply_to_message_id"] = reply_message_id
+        telegram_response['telegram'] = simple_reponse
+        self.response["payload"] = telegram_response
+        self.response["platform"] = "TELEGRAM"
 
 class TelegramKeyboardButtonResponse:
     """
@@ -60,7 +65,12 @@ class TelegramKeyboardButtonResponse:
 
     def __init__(self, message, inline_keyboard = []):
         self.response = OrderedDict()
-        self.response["text"] = message
+        telegram_response = dict()
+        simple_reponse = OrderedDict()
+        simple_reponse["text"] = message
         reply_markup = dict()
         reply_markup["inline_keyboard"] = inline_keyboard
-        self.response["reply_markup"] = reply_markup
+        simple_reponse["reply_markup"] = reply_markup
+        telegram_response['telegram'] = simple_reponse
+        self.response["payload"] = telegram_response
+        self.response["platform"] = "TELEGRAM"
