@@ -1,6 +1,7 @@
 # Dialogflow Fulfillment Python
 
 [![Made in Nigeria](https://img.shields.io/badge/made%20in-nigeria-008751.svg?style=flat-square)](https://github.com/acekyd/made-in-nigeria)
+![pydialogflow_fulfillment](https://github.com/Emmarex/dialogflow-fulfillment-python/workflows/pydialogflow_fulfillment/badge.svg)
 [![PyPI version](https://badge.fury.io/py/pydialogflow-fulfillment.svg)](https://badge.fury.io/py/pydialogflow-fulfillment)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/pydialogflow-fulfillment.svg)
 [![Documentation Status](https://readthedocs.org/projects/dialogflow-fulfillment-python/badge/?version=latest)](https://dialogflow-fulfillment-python.readthedocs.io/en/latest/?badge=latest)
