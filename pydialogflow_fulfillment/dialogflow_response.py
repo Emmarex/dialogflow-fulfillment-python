@@ -2,6 +2,7 @@ from collections import OrderedDict
 import json
 from pydialogflow_fulfillment.response import *
 from pydialogflow_fulfillment.telegram_response import *
+from pydialogflow_fulfillment.default import *
 
 class DialogflowResponse:
 
@@ -90,6 +91,11 @@ class DialogflowResponse:
         elif isinstance(dialog_response, TelegramKeyboardButtonResponse):
             self.fulfillment_messages.append(dialog_response.response)
         elif isinstance(dialog_response, TelegramMessageResponse):
+            self.fulfillment_messages.append(dialog_response.response)
+        # default responses
+        elif isinstance(dialog_response, TextResponse):
+            self.fulfillment_messages.append(dialog_response.response)
+        elif isinstance(dialog_response, CustomPayloadResponse):
             self.fulfillment_messages.append(dialog_response.response)
         
         self.google_payload["richResponse"] = self.rich_response
