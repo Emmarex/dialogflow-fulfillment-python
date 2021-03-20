@@ -7,7 +7,7 @@ docutils==0.14
 Flask==1.0.2
 idna==2.8
 itsdangerous==1.1.0
-Jinja2==2.10
+Jinja2==2.11.3
 MarkupSafe==1.1.0
 pkginfo==1.5.0.1
 pydialogflow-fulfillment==0.0.4
