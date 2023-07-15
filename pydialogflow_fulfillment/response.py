@@ -15,11 +15,7 @@ class SimpleResponse:
 class Suggestions:
 
     def __init__(self,suggestion_titles):
-        self.response = []
-        for item in range(0,len(suggestion_titles)):
-            suggestion_dict = dict()
-            suggestion_dict["title"] = suggestion_titles[item]
-            self.response.append(suggestion_dict)
+        self.response = [{"title": title} for title in suggestion_titles]
 
 class SystemIntent:
 
